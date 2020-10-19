@@ -8,6 +8,9 @@ description: "This repository contains sample for Azure Functions in Java"
 urlFragment: "azure-functions-java"
 ---
 
+# これ
+https://docs.microsoft.com/ja-jp/azure/azure-functions/functions-create-first-java-gradle
+
 # Azure Functions example in Java
 
 This sample show a basis usage for how to use *http-trigger* for [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) in Java.

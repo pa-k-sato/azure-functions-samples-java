@@ -24,7 +24,7 @@ repositories {
 
 azurefunctions {
     resourceGroup = 'java-functions-group'
-    appName = 'azure-functions-sample'
+    appName = 'azure-functions-sample-pa-20201016'
     pricingTier = 'Consumption'
     region = 'westus'
     runtime {
