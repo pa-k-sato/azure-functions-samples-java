@@ -1,8 +1,13 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     id "org.jetbrains.kotlin.jvm" version "1.4.10"
     id "com.microsoft.azure.azurefunctions" version "1.5.0"
+
+    id 'org.springframework.boot' version '2.3.4.RELEASE'
 }
 apply plugin: 'kotlin'
+apply plugin: 'io.spring.dependency-management'
 apply plugin: "com.microsoft.azure.azurefunctions"
 
 group 'com.functions'
@@ -12,10 +17,19 @@ dependencies {
     implementation 'com.microsoft.azure.functions:azure-functions-java-library:1.4.0'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.6.2'
     testImplementation 'org.mockito:mockito-core:3.3.3'
+
+    implementation('org.springframework.boot:spring-boot-starter')
 }
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
+
+tasks.withType(KotlinCompile) {
+    kotlinOptions {
+//        freeCompilerArgs = listOf("-Xjsr305=strict")
+        jvmTarget = "1.8"
+    }
+}
 
 compileJava.options.encoding = 'UTF-8'
 
