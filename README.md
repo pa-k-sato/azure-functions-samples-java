@@ -11,6 +11,13 @@ urlFragment: "azure-functions-java"
 # これ
 https://docs.microsoft.com/ja-jp/azure/azure-functions/functions-create-first-java-gradle
 
+## 実行
+```bash
+export JAVA_HOME=/usr
+gradle jar --info
+gradle azureFunctionsRun
+```
+
 # Azure Functions example in Java
 
 This sample show a basis usage for how to use *http-trigger* for [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) in Java.

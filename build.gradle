@@ -1,7 +1,8 @@
 plugins {
-  id "com.microsoft.azure.azurefunctions" version "1.5.0"
+    id "org.jetbrains.kotlin.jvm" version "1.4.10"
+    id "com.microsoft.azure.azurefunctions" version "1.5.0"
 }
-apply plugin: 'java'
+apply plugin: 'kotlin'
 apply plugin: "com.microsoft.azure.azurefunctions"
 
 group 'com.functions'
@@ -21,6 +22,19 @@ compileJava.options.encoding = 'UTF-8'
 repositories {
     mavenCentral()
 }
+
+sourceSets {
+    main {
+        java.srcDir("src/main/kotlin")
+        // resources.srcDir("src/main/resources")
+    }
+//
+//    test {
+//        java.srcDir("src/test/kotlin")
+//        resources.srcDir("src/test/resources")
+//    }
+}
+
 
 azurefunctions {
     resourceGroup = 'java-functions-group'
