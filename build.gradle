@@ -22,6 +22,7 @@ dependencies {
     // implementation('org.springframework.cloud:spring-cloud-function-adapter-azure')
     implementation('org.springframework.cloud:spring-cloud-function-dependencies:3.0.10.RELEASE')
     implementation('org.springframework.cloud:spring-cloud-function-adapter-azure:3.0.10.RELEASE')
+    //compileOnly('org.springframework.cloud:spring-cloud-starter-function-web:3.0.10.RELEASE')
 }
 
 sourceCompatibility = '1.8'
@@ -56,17 +57,17 @@ sourceSets {
 azurefunctions {
     resourceGroup = 'java-functions-group'
     appName = 'azure-functions-sample-pa-20201016'
-    pricingTier = 'Consumption'
-    region = 'westus'
+//    pricingTier = 'Consumption'
+//    region = 'westus'
     appSettings {
         WEBSITE_RUN_FROM_PACKAGE = '1'
         FUNCTIONS_EXTENSION_VERSION = '~2'
         FUNCTIONS_WORKER_RUNTIME = 'java'
         MAIN_CLASS = 'com.functions.SpringBootConsoleApplicationKt'
     }
-    runtime {
-      os = 'windows'
-      javaVersion = '8'
-    }
+//    runtime {
+//      os = 'windows'
+//      javaVersion = '8'
+//    }
     localDebug = "transport=dt_socket,server=y,suspend=n,address=5005"
 }
