@@ -4,11 +4,11 @@ plugins {
     id "org.jetbrains.kotlin.jvm" version "1.4.10"
     id "com.microsoft.azure.azurefunctions" version "1.5.0"
 
-    id 'org.springframework.boot' version '2.3.4.RELEASE'
+    //id 'org.springframework.boot' version '2.3.4.RELEASE'
 }
 apply plugin: 'kotlin'
-apply plugin: 'io.spring.dependency-management'
-apply plugin: "com.microsoft.azure.azurefunctions"
+// apply plugin: 'io.spring.dependency-management'
+// apply plugin: "com.microsoft.azure.azurefunctions"
 
 group 'com.functions'
 version '1.0-SNAPSHOT'
@@ -18,9 +18,10 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.6.2'
     testImplementation 'org.mockito:mockito-core:3.3.3'
 
-    implementation('org.springframework.boot:spring-boot-starter')
+    // implementation('org.springframework.boot:spring-boot-starter')
     // implementation('org.springframework.cloud:spring-cloud-function-adapter-azure')
-    implementation('org.springframework.cloud:spring-cloud-function-adapter-azure:3.0.6.RELEASE')
+    implementation('org.springframework.cloud:spring-cloud-function-dependencies:3.0.10.RELEASE')
+    implementation('org.springframework.cloud:spring-cloud-function-adapter-azure:3.0.10.RELEASE')
 }
 
 sourceCompatibility = '1.8'
@@ -57,6 +58,12 @@ azurefunctions {
     appName = 'azure-functions-sample-pa-20201016'
     pricingTier = 'Consumption'
     region = 'westus'
+    appSettings {
+        WEBSITE_RUN_FROM_PACKAGE = '1'
+        FUNCTIONS_EXTENSION_VERSION = '~2'
+        FUNCTIONS_WORKER_RUNTIME = 'java'
+        MAIN_CLASS = 'com.functions.SpringBootConsoleApplicationKt'
+    }
     runtime {
       os = 'windows'
       javaVersion = '8'

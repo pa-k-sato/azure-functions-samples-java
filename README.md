@@ -18,6 +18,13 @@ gradle jar --info
 gradle azureFunctionsRun
 ```
 
+## spring cloud function にしてから
+- `bootJar` で `./build/libs`にJARを作る必要はありそう
+
+---
+
+# 元々あったものたち
+
 # Azure Functions example in Java
 
 This sample show a basis usage for how to use *http-trigger* for [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/) in Java.
