@@ -22,6 +22,7 @@ dependencies {
     // implementation('org.springframework.cloud:spring-cloud-function-adapter-azure')
     implementation('org.springframework.cloud:spring-cloud-function-dependencies:3.0.10.RELEASE')
     implementation('org.springframework.cloud:spring-cloud-function-adapter-azure:3.0.10.RELEASE')
+    implementation('org.springframework.cloud:spring-cloud-function-kotlin:3.0.10.RELEASE')
     //compileOnly('org.springframework.cloud:spring-cloud-starter-function-web:3.0.10.RELEASE')
 }
 
@@ -63,7 +64,7 @@ azurefunctions {
         WEBSITE_RUN_FROM_PACKAGE = '1'
         FUNCTIONS_EXTENSION_VERSION = '~2'
         FUNCTIONS_WORKER_RUNTIME = 'java'
-        MAIN_CLASS = 'com.functions.SpringBootConsoleApplicationKt'
+        MAIN_CLASS = 'com.functions.SpringBootConsoleApplication'
     }
 //    runtime {
 //      os = 'windows'
