@@ -18,8 +18,8 @@ class SpringBootConsoleApplication(
     }
 
     @Bean
-    fun scfTimer() {
-        println("test")
+    fun scfTimer(): () -> String {
+        return {"Hello"}
     }
 
     companion object {
