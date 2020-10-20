@@ -23,6 +23,12 @@ gradle azureFunctionsRun
 
 ---
 
+# timer trigger
+npm インストールした azurite を起動
+```bash
+azurite --silent --location ./work --debug ./work/debug.log
+```
+
 # 元々あったものたち
 
 # Azure Functions example in Java
