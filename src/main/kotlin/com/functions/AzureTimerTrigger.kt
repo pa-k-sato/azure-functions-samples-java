@@ -7,7 +7,7 @@ import com.microsoft.azure.functions.annotation.TimerTrigger
 class AzureTimerTrigger {
     @FunctionName("keepAlive")
     fun test(
-        @TimerTrigger(name = "keepAliveTrigger", schedule = "0 */1 * * * *") timerInfo: String,
+        @TimerTrigger(name = "keepAliveTrigger", schedule = "0 */10 * * * *") timerInfo: String,
         context: ExecutionContext
     ) {
         context.logger.info("Timer is triggered: $timerInfo" )

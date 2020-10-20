@@ -13,8 +13,13 @@ class SpringBootConsoleApplication(
     private val myService: MyService
 ) {
     @Bean
-    open fun hello(): (User) -> Greeting {
+    fun hello(): (User) -> Greeting {
         return {Greeting("Welcome, ${it.name}")}
+    }
+
+    @Bean
+    fun scfTimer() {
+        println("test")
     }
 
     companion object {
