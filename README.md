@@ -33,16 +33,15 @@ gradle jar --info
 gradle azureFunctionsRun
 ```
 
-## spring cloud function にしてから
-- `bootJar` で `./build/libs`にJARを作る必要はありそう
-
----
-
 # timer trigger
 npm インストールした azurite を起動
 ```bash
+mkdir work
 azurite --silent --location ./work --debug ./work/debug.log
 ```
+
+## 参考
+- [azure functions timer trigger](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-timer?tabs=java)
 
 # 以下、元々あったもの
 
