@@ -1,19 +1,34 @@
----
-page_type: sample
-languages:
-- java
-products:
-- azure functions
-description: "This repository contains sample for Azure Functions in Java"
-urlFragment: "azure-functions-java"
----
+# overview
+
+[このリポジトリ](https://github.com/Azure-Samples/azure-functions-samples-java)
+を変更して`azure-functions`を試しました
+- kotlin で書けるか
+- spring アプリケーションを動かせるか
+
+## 状況
+- わかったこと
+    - kotlinで書ける
+    - HTTPトリガなら Spring アプリケーションが動く
+- わかっていないこと
+    - kotlinで書ける
+    - タイマートリガでSpring アプリケーションを動かす方法
+    - `build.gradle`のkotlin DSL 化
+
+## 詳しくは
+- コミットログを参照してください( d2a1373 以降)
+- `koylin`ソースフォルダを参照してください
 
 # これ
 https://docs.microsoft.com/ja-jp/azure/azure-functions/functions-create-first-java-gradle
 
 ## 実行
+`JAVA_HOME`の設定が必要
+
+ローカルで動かすセットアップは必要です。Wikiを参照してください。
+
+
 ```bash
-export JAVA_HOME=/usr
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 gradle jar --info
 gradle azureFunctionsRun
 ```
@@ -29,7 +44,7 @@ npm インストールした azurite を起動
 azurite --silent --location ./work --debug ./work/debug.log
 ```
 
-# 元々あったものたち
+# 以下、元々あったもの
 
 # Azure Functions example in Java
 
